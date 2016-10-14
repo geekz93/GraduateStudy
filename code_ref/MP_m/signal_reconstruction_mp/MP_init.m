@@ -1,6 +1,5 @@
 % function: MP algotithm applied to decomposition of one signal named bat
 % the over-complete dictionary used in the program id the Fabor atom ditionary
-
 % part one: read signal data, which is asved in the format: save bat.dat bat --ascii
 load bat.dat -ascii;
 
@@ -63,15 +62,15 @@ signal_reconstruct=signal_reconstruct+proj*g;
 signal_r=signal_r-proj*g;
 
 % at each step of MP, we display the figures of the orignal signal, the best atom selected, the residual signal and hte reconstruced signal at window 1,2,3,4 respectively
-subplot(221);
-plot(bat);
-subplot(222);
-plot(g);
-subplot(223);
-plot(signal_r);
-subplot(224);
-plot(signal_reconstruct);
-drawnow;
+%subplot(221);
+%plot(bat);
+%subplot(222);
+%plot(g);
+%subplot(223);
+%plot(signal_r);
+%subplot(224);
+%plot(signal_reconstruct);
+%drawnow;
 % n is the MP process number, or the number,or the number of atom selected
 n
 end

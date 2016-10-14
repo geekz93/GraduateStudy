@@ -34,9 +34,11 @@ for j=j_min:j_max
 		w=i*w_base;
 		t=0:N-1;
 		t=(t-u)/s;
-
+        % generate an element
 		g=(1/sqrt(s))*exp(-pi*t.*t).*cos(v*t+w);
+        % unit the element
 		g=g/sqrt(sum(g.*g));    
+        % projection
 		proj_trans=sum(signal_r.*g);
 
 		if abs(proj_trans)>abs(proj)
@@ -46,7 +48,7 @@ for j=j_min:j_max
 		    freq=v;
 		    phase=w;
 		end
-            end
+         end
 	end
     end
 end
