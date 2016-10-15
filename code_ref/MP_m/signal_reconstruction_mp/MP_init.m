@@ -1,8 +1,11 @@
 % function: MP algotithm applied to decomposition of one signal named bat
 % the over-complete dictionary used in the program id the Fabor atom ditionary
 % part one: read signal data, which is asved in the format: save bat.dat bat --ascii
-load bat.dat -ascii;
-
+%load bat.dat -ascii;
+beg=0;
+endn=1.5;
+t= beg: (endn-beg)/63: endn
+bat=sin(2*pi*t)
 
 %part 2:
 %part 2.1
