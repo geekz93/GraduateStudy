@@ -26,7 +26,6 @@ for j=j_min:j_max
     for p=p_min:N*2^(-j+1)
         for k=k_min:2^(j+1)
 	    for i=i_min:i_max
-	        
 		size_dic=size_dic+1;
 		s=a_base^j;
 		u=p*s*u_base;
@@ -40,6 +39,7 @@ for j=j_min:j_max
 		g=g/sqrt(sum(g.*g));    
         % projection
 		proj_trans=sum(signal_r.*g);
+        
 
 		if abs(proj_trans)>abs(proj)
 		    proj=proj_trans;

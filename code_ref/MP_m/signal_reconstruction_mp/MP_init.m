@@ -4,8 +4,8 @@
 %load bat.dat -ascii;
 beg=0;
 endn=1.5;
-t= beg: (endn-beg)/63: endn
-bat=sin(2*pi*t)
+t= beg: (endn-beg)/256: endn;
+bat=sin(2*pi*t);
 
 %part 2:
 %part 2.1
@@ -60,20 +60,21 @@ t=(t-translation)/scale;
 g=(1/sqrt(scale))*exp(-pi*t.*t).*cos(freq*t+phase);
 g=g/sqrt(sum(g.*g));
 
+proj, scale, translation, freq, phase
 % reducing the best atom part from the residual signal and adding it to the reconstructed signal
 signal_reconstruct=signal_reconstruct+proj*g;
 signal_r=signal_r-proj*g;
 
 % at each step of MP, we display the figures of the orignal signal, the best atom selected, the residual signal and hte reconstruced signal at window 1,2,3,4 respectively
-%subplot(221);
-%plot(bat);
-%subplot(222);
-%plot(g);
-%subplot(223);
-%plot(signal_r);
-%subplot(224);
-%plot(signal_reconstruct);
-%drawnow;
+subplot(221);
+plot(bat);
+subplot(222);
+plot(g);
+subplot(223);
+plot(signal_r);
+subplot(224);
+plot(signal_reconstruct);
+drawnow;
 % n is the MP process number, or the number,or the number of atom selected
 n
 end
