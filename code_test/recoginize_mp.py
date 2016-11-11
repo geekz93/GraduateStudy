@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 import numpy as np
 import matplotlib.pyplot as plt
 ## 测试正弦信号能否被恢复
@@ -35,12 +36,12 @@ def select(signal, a_min, a_max, f_min, f_max, pha_min, pha_max):
     #print("times: ",c)
     return (proj, amplitude, freq, phase)
 
-a, f, p = 2, 3.7, 0.3*np.pi
+a, f, p = 3, 3.7, 0.3*np.pi
 print('原信号参数:',a,f,p)  
 sup = 2 # 范围上限
 
 # generate noise
-peek=1
+peek=5
 noise=[peek*np.random.random() for x in np.arange(0,sup,0.01)]
 noise_neg=[-peek*np.random.random() for x in np.arange(0,sup,0.01)]
 noise[len(noise):len(noise)]=noise_neg # 噪声信号
@@ -53,7 +54,7 @@ signal=a*np.sin(2*np.pi*f*t+p) # 干净信号
 
 signal_noise=signal+noise # 掺噪信号
 
-data=signal #重构信号选择：signal，signal_noise, noise
+data=signal_noise #重构信号选择：signal，signal_noise, noise
 
 lenth_of_signal=np.sqrt(np.sum(data*data))
 print('输入信号长度:',lenth_of_signal)
@@ -79,7 +80,7 @@ signal_recon=proj*g
 lenth_of_signal3=np.sqrt(np.sum(signal_recon*signal_recon))
 print('重构信号长度:',lenth_of_signal3)
 err = signal-signal_recon
-print('误差最大值:', max(err))
+print('误差最大值:'.decode('utf8'), max(err))
 
 plt.subplot(221) 
 plt.plot(signal[0:150]) # 干净信号
