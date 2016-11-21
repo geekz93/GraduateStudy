@@ -1,3 +1,4 @@
+# -.- coding=utf8 -.-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -53,7 +54,7 @@ def select_best(signal_r, N, a_base, j_min, j_max, u_base,\
     #print("in func:",proj, scale, translation, freq, phase)
     return (proj, scale, translation, freq, phase)
 
-data=generate_rand(128)
+data=generate_rand(64)
 
 iter_num= 4
 N=len(data)
