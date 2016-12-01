@@ -1,4 +1,4 @@
-## the application
+## the application of sparse representations
 Inpainting(图像修复)
 Image Denoising(去噪，彩色图像和灰度图像)
 deblurring(去模糊)
